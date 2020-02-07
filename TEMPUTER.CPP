@@ -1,0 +1,11 @@
+#include<iostream.h>
+#include<conio.h>
+void main(){
+float c,f;
+clrscr();
+cout<<"Enter tempture in fareheaite:";
+cin>>f;
+c=5/9.0 * f-32;
+cout<<"\nConvatted tamputer in cilsues="<<c;
+getch();
+}

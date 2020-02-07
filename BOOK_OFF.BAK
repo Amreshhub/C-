@@ -1,0 +1,49 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+char pname;
+float mrp,rate,dis,pay,vat,net;
+int d=1;
+clrscr();
+cout<<"\nEnter Publishar name as/T(TMH)/B(BPB)/D(DEREAM TECH):-";
+cin>>pname;
+if(pname=='T'||pname=='t')
+	rate=20;
+else
+if(pname=='B'||pname=='b')
+	rate=30;
+else
+if(pname=='D'||pname=='d')
+	rate=15;
+else
+{
+cout<<endl<<"Invalied mrp found plz Enter agan";
+d=0;
+}
+if(d)
+{
+cout<<endl<<"Enter MRP on given Publishar:";
+cin>>mrp;
+if(mrp>0)
+{
+dis=mrp*rate/100;
+pay=mrp-dis;
+vat=pay*12/100;
+net=pay+vat;
+clrscr();
+cout<<endl<<"\t\t*************Bill****************";
+cout<<endl<<"\t\tPublishar name as B/D/T:-"<<pname;
+cout<<endl<<"\t\tMrp in Rs:-              "<<mrp;
+cout<<endl<<"\t\tDiscount amount in Rs:-  "<<dis;
+cout<<endl<<"\t\t===================================";
+cout<<endl<<"\t\tPayble amount in Rs:-     "<<pay;
+cout<<endl<<"\t\t12% vat in Rs:-           "<<vat;
+cout<<endl<<"\t\t====================================";
+cout<<endl<<"\t\tNet bill amount in Rs:-   "<<net;
+ }
+else
+cout<<endl<<"Invalied Mrp found plz enter agan:";
+getch();
+}
+}

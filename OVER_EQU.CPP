@@ -1,0 +1,74 @@
+//program demonstretrs == and >= overload in cpp
+#include<iostream.h>
+#include<conio.h>
+class complex{
+	float real,imag;
+	public:complex();
+		complex(float,float);
+		complex(const complex&);
+		void input(float,float);
+		void display();
+		int operator ==(const complex&);
+		friend int operator>=(const complex&,const complex&);
+		};//close of class
+complex::complex()
+{
+	real=imag=0;
+	cout<<endl<<"Default constrecter called";
+	}
+complex::complex(float real,float imag)
+{
+cout<<endl<<"Overlodad constrecter called";
+this->real=real;this->imag=imag;
+}
+complex::complex(const complex&w)
+{
+cout<<endl<<"Copy constrecter called";
+real=w.real;imag=w.imag;
+}
+void complex::input(float real,float imag)
+{
+	this->real=real;this->imag=imag;
+	}
+void complex::display()
+{
+if(imag>=0)
+	cout<<endl<<real<<"+"<<imag<<"i";
+else
+	cout<<endl<<real<<imag<<"I";
+	}
+int complex:: operator==(const complex&s)
+{
+int d=0;
+if(this->real==s.real&&this->imag==s.imag)
+d=1;
+return(d);
+}
+int operator>=(const complex&j,const complex&h)
+{
+int d=0;
+if(j.real>=h.real&&j.imag>=h.imag)
+d=1;
+return(d);
+}
+void main()
+{
+clrscr();
+complex x,y(4,6),z(y);
+x.display();
+y.display();
+z.display();
+if(y==z)
+	cout<<endl<<"Oject y and z are same ";
+else
+	cout<<endl<<"object y and z are not same";
+if(y>=z)
+	cout<<endl<<"object y grater then equalto Object z";
+else
+	cout<<endl<<"Object  y not geter then equal to z";
+getch();
+}//close of main
+
+
+
+

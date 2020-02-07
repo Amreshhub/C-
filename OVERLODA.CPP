@@ -1,0 +1,63 @@
+//example to overloading operater +,- in c++;
+#include<iostream.h>
+#include<conio.h>
+class complex
+{
+	float real,imag;
+public: complex();
+	complex(float,float);
+	complex(const complex&);
+	void input(float,float);
+	void display();
+	complex operator+(const complex&);
+	friend complex operator-(const complex&,const complex&);
+};//close of class
+complex::complex(){
+cout<<endl<<"Default constrocter called";
+real=imag=0;
+}
+complex::complex(float real,float imag){
+cout<<endl<<"overlodad constrectur called";
+this->real=real;this->imag=imag;
+}
+complex::complex(const complex &a){
+cout<<endl<<"Copy constrector called";
+real=a.real;imag=a.imag;
+}
+void complex::input(float real,float imag){
+this->real=real;this->imag=imag;
+}
+void complex::display(){
+if(imag>=0)
+	cout<<endl<<real<<"+"<<imag<<"i";
+else
+	cout<<endl<<real<<imag<<"i";
+}
+
+ complex complex::operator+ ( const complex &s){
+ this->real=this->real+s.real;
+ this->imag=this->imag+s.imag;
+ return(*this);
+ }
+ complex operator - (const complex &d,const complex &e){
+ complex tmp;
+ tmp.real=d.real+e.real;
+ tmp.imag=d.imag+e.imag;
+ return(tmp);
+ }
+ void main(){
+ clrscr();
+ complex x,y(3,2),z(y),s(8,4),d,f(4,2);
+ x.display();
+ y.display();
+ z.display();
+ x=y+z;
+ cout<<endl<<"Sum of two object\n";
+ x.display();
+ d=s-f;
+ cout<<endl<<"Defarence between two object\n";
+ d.display();
+ getch();
+ }
+
+

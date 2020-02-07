@@ -1,0 +1,62 @@
+	//program based on single inharitance
+#include<iostream.h>
+#include<conio.h>
+class feneture
+{
+	float width,hight;
+protected: void input(){
+cout<<endl<<"Enter hight value:-";
+cin>>hight;
+cout<<endl<<"Enter width value:-";
+cin>>width;
+}
+void output(){
+cout<<endl<<"Hight:-"<<hight;
+cout<<endl<<"Width:-"<<width;
+}
+};//close of class fenture
+//define drived class chear
+class chear:public feneture
+{
+	int arms,legs;
+public:void accept(){
+	cout<<endl<<"*******Enter order chear to made:*********";
+	input();
+	cout<<endl<<"Enter no of armes:-";
+	cin>>arms;
+	cout<<endl<<"Enter no of leags:-";
+	cin>>legs;
+	}
+	void disp(){
+	cout<<endl<<"*******Displaying order to made chear**************";
+	output();
+	cout<<endl<<"No of arms:-"<<arms;
+	cout<<endl<<"No of legs:-"<<legs;
+	cout<<endl<<"****************************************************";
+	}
+};//close of drived class chear
+//defining drived class bookself
+class book:public feneture
+{
+  int self;
+public:void accept(){
+	cout<<endl<<"*******:Enter order bookself to made:***********";
+	input();
+	cout<<endl<<"Enter no of self:-";cin>>self;
+	}
+	void disp(){
+	cout<<endl<<"******:Displaying order of bookself:***********";
+	output();
+	cout<<endl<<"No of self:-"<<self;
+	cout<<endl<<"*************************************************";
+	}
+};//close ofderived class bookself
+void main(){
+clrscr();
+chear c;book b;
+c.accept();
+c.disp();
+b.accept();
+b.disp();
+getch();
+}//close of main

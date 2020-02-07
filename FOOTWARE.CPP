@@ -1,0 +1,49 @@
+#include<iostream.h>
+#include<conio.h>
+void main(){
+char cname;
+float mrp,rate,dis,pay,vat,net;
+int s=1;
+clrscr();
+cout<<"Enter Company name as A(action)/B(bata)/L(liberty):";
+cin>>cname;
+if(cname=='A'||cname=='a')
+	rate=30;
+else
+if(cname=='B'||cname=='b')
+	rate=50;
+else
+if(cname=='L'||cname=='l')
+	rate=20;
+else {
+cout<<endl<<"Invalied copany name found Plz enter agan";
+s=0;}
+if(s)
+{
+cout<<endl<<"Enter MRP in Given footware:-";
+cin>>mrp;
+if(mrp>0)
+{
+dis=mrp*rate/100;
+pay=mrp-dis;
+vat=pay*12/100;
+net=pay+vat;
+clrscr();
+cout<<endl<<"\t\t*******************Bill*******************************";
+cout<<endl<<"\t\tCompany name asA(actio)/B(bata)/L(liberty):-"<<cname;
+cout<<endl<<"\t\tMRP of given footware:-                      "<<mrp;
+cout<<endl<<"\t\tDiscount rate:-                              "<<rate<<"%";
+cout<<endl<<"\t\tDicount amount in Rs:-                       "<<dis;
+cout<<endl<<"\t\t===================================================";
+cout<<endl<<"\t\tPaybale amount in Rs:-                       "<<pay;
+cout<<endl<<"\t\t12%Vat in Rs:-                               "<<vat;
+cout<<endl<<"\t\t====================================================";
+cout<<endl<<"\t\tNet bill Amount in Rs:-		       "<<net;
+cout<<endl<<"\t\t*******************************************************";
+}else
+cout<<endl<<"Invalied Mrp found Plz Enetr agan:";
+
+}
+getch();
+}
+

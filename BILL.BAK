@@ -1,0 +1,54 @@
+#include<iostream.h>
+#include<conio.h>
+#include<dos.h>
+void main(){
+long int pcode;
+float mrp,qty,pamount,dis,pay,vat,net;
+clrscr();
+a1:cout<<"Enter producet code:";
+cin>>pcode;
+if(pcode<0)
+{
+	cout<<endl<<"Invalied entery found plz enter agan";
+	delay(2000);
+	goto a1;
+	}
+a2:cout<<endl<<"Enter MRP in rs:";
+cin>>mrp;
+if(mrp<=0)
+{
+	cout<<endl<<"Invalied entery found Plz Enetr agan:";
+	delay(2000);
+	goto a2;
+	}
+a3:cout<<endl<<"Enter Quantety tokan:";
+cin>>qty;
+if(qty<=0)
+{
+	cout<<endl<<"Invalied entery found:";
+	delay(2000);
+	goto a3;
+	}
+pamount=mrp*qty;
+if(pamount>=2000)
+	dis=pamount*20/100;
+else
+	dis=pamount*10/100;
+pay=pamount-dis;
+vat=pay*20/100;
+net=pay+vat;
+clrscr();
+cout<<"\t\t===========BILL=================";
+cout<<endl<<"Producet code:	   "<<pcode;
+cout<<endl<<"MRP in Rs:            "<<mrp;
+cout<<endl<<"Qty tokan:            "<<qty;
+cout<<endl<<"----------------------------";
+cout<<endl<<"Purchage amount in Rs:"<<pamount;
+cout<<endl<<"Discount amount in Rs:"<<dis;
+cout<<endl<<"----------------------------";
+cout<<endl<<"Paybal amount in Rs:  "<<pay;
+cout<<endl<<"12%Vat in Rs:        "<<vat;
+cout<<endl<<"================================";
+cout<<endl<<"Net bill amount in Rs:"<<net;
+getch();
+}

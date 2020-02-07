@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int num=100,a=0,sum=0,cnum,i;
+	clrscr();
+
+//if(num>0&&num<=9990)
+//{
+	for(cnum=num;num>0;a=num%10,sum=sum+a*a*a,num/=10,num++ ,cnum++);
+
+	if(sum==cnum)
+
+	       //	if(sum>=9990)
+
+		 for(i=0;i<=9990;i++)
+
+			printf("\n%d is amstrong number",sum);
+
+
+
+
+
+getch();
+}
+

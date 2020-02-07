@@ -1,0 +1,87 @@
+//implimainting constructer use in case of inharitance
+#include<iostream.h>
+#include<conio.h>
+class feneture
+{
+	float width ,hight;
+protected:feneture(){
+	cout<<endl<<"Base class Default constrector called";
+	width=hight=0;
+	}
+	feneture(float width,float hight)
+	{
+	cout<<endl<<"Base class overlodaed Constrector called";
+	this->width=width;
+	this->hight=hight;
+	}
+	void accept(){
+	cout<<endl<<"Enter value of Width::-";
+	cin>>width;
+	cout<<endl<<"Enter value of hight::-";
+	cin>>hight;
+	}
+	void disp(){
+       //	cout<<endl<<"within/inside base class disp() called";
+	cout<<endl<<"width:"<<width;
+	cout<<endl<<"hight:"<<hight;
+	}
+};//close of base class
+//define derived class chear
+class chear:public feneture{
+	int arms,lages;
+public:chear(){
+	cout<<endl<<"Derived class default constrector called";
+	arms=lages=0;
+	}
+	chear(float w,float h,int a,int l):feneture(w,h){
+	cout<<endl<<"Derived class chear Overlodead Constrector called";
+	arms=a;lages=l;
+	}
+	void accept(){
+	cout<<endl<<"::Insert dimonsion of chear to be made::";
+	feneture::accept();
+	cout<<endl<<"Enter no of arms:-";cin>>arms;
+	cout<<endl<<"Enter no of Lages:-";cin>>lages;
+	}
+	void disp(){
+	cout<<endl<<"=====Display order of Chear=======";
+	feneture::disp();
+	cout<<endl<<"No of arms:"<<arms;
+	cout<<endl<<"No of Lages:"<<lages;
+	cout<<endl<<"==================================";
+	}
+};//close of derived class chear
+//define derived class
+class book:public feneture{
+	int self;
+public:book(){
+	cout<<endl<<"Derived class  bookshlef Default Constrector called";
+	self=0;
+	}
+	book(float w,float h,int s):feneture(w,h){
+	cout<<endl<<"Derived class Bookshlef Overloaded constrector called";
+	self=s;
+	}
+	void accept(){
+	cout<<endl<<"::Insert dimonson of Boookshlef::";
+	feneture::accept();
+	cout<<endl<<"Enter no of Shelf::-";cin>>self;
+	}
+	void disp(){
+	cout<<endl<<"=======Display Order of Bookslef==========";
+	feneture::disp();
+	cout<<endl<<"No of shelf::-"<<self;
+	cout<<endl<<"===========================================";
+	}
+};//close of derived class bookshlif
+void main(){
+clrscr();
+chear c;
+c.accept();
+c.disp();
+book b;
+b.accept();
+b.disp();
+getch();
+}//close of main
+

@@ -1,0 +1,53 @@
+//program based on '='operator overloading
+#include<iostream.h>
+#include<conio.h>
+class complex
+{
+	float real,imag;
+public:complex();
+	complex(float,float);
+	complex(const complex&);
+	void disp();
+	complex operator=(const complex&);
+};//close of class
+complex::complex()
+{
+cout<<endl<<"Default constructer called";
+real=imag=0;
+}//close of function
+complex::complex(float real,float imag)
+{
+cout<<endl<<"Overloaded constructer called";
+this->real=real;
+this->imag=imag;
+}//close of function
+complex::complex(const complex&a)
+{
+cout<<endl<<"Copy constructer called";
+real=a.real;
+imag=a.imag;
+}//close of function
+void complex::disp()
+{
+	if(imag>=0)
+		cout<<endl<<real<<"+"<<imag<<"i";
+	else
+		cout<<endl<<real<<imag<<"i";
+}//close of function
+complex complex::operator=(const complex&s)
+{
+cout<<endl<<"Our own = oprerator  called";
+this->real=a.real;
+this->imag=a.imag;
+}//close of function
+void main()
+{
+clrscr();
+complex x,y(3,5),z(y);
+x.disp();
+y.disp();
+z.disp();
+x=y=z;
+x.disp();
+getch();
+}//close of main

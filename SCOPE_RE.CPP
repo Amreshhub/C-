@@ -1,0 +1,60 @@
+//member function overloading using with scop reseloution opeteor
+#include<iostream.h>
+#include<conio.h>
+#include<dos.h>
+class addtion
+{
+	float num1,num2,num3,num4;
+public:
+	void input(float,float);
+	void input(float,float,float);
+	void input(float,float,float,float);
+	int sum();
+};
+void addtion::input(float a,float b){
+num1=a;num2=b;num3=0.0;num4=0.0;
+}
+void addtion::input(float a,float b,float c){
+num1=a;num2=b;num3=c;num4=0.0;
+}
+void addtion::input(float a,float b,float c,float d){
+num1=a;num2=b;num3=c;num4=d;
+}
+int addtion::sum(){
+return(num1+num2+num3+num4);
+}
+void main(){
+clrscr();
+addtion s,*p;
+p=&s;
+float n,num1,num2,num3,num4;
+a1:cout<<endl<<"Enter how many number do you want to Enter and Number Enter only 5:-";
+cin>>n;
+if(n>4||n<2)
+{
+	cout<<endl<<"Invalied number found plz enter number only geatrer than 1 and belo five number;";
+	  delay(2000);
+	  goto a1;
+	  }
+if(n==2)
+{
+	cout<<endl<<"Enter any two number:-";cin>>num1>>num2;
+	p->input(num1,num2);
+	cout<<endl<<"Sum of two number:-"<<p->sum();
+if(n==3)
+{
+	cout<<endl<<"Enter any four number:-";cin>>num1>>num2>>num3;
+	p->input(num1,num2,num3);
+	cout<<endl<<"Sum of three number:-"<<p->sum();
+	}
+if(n==4)
+{
+	cout<<endl<<"Enter any four number:-";cin>>num1>>num2>>num3>>num4;
+	p->input(num1,num2,num3,num4);
+	cout<<endl<<"Sum of four number:-"<<p->sum();
+	}
+getch();
+}
+
+
+

@@ -1,0 +1,16 @@
+#include<iostream.h>
+#include<conio.h>
+void main(){
+auto int a=115;
+{
+int b=29;
+clrscr();
+cout<<"Value in local var a="<<a;
+cout<<"value in local var b="<<b;
+}
+{
+auto int k;
+cout<<"\nValue in local var k="<<k;
+}
+getch();
+}

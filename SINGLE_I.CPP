@@ -1,0 +1,25 @@
+//program based on single inharintance
+#include<iostream.h>
+#include<conio.h>
+//define base class
+class base1
+{
+	protected:void disp1(){
+	cout<<endl<<"Base1 function called";
+	}
+};
+//defining drived class
+class derived:public base1
+{
+	public:void disp(){
+	cout<<endl<<"drived own	function called";
+
+	disp1();
+	}
+};
+void main(){
+clrscr();
+derived d;
+d.disp();
+getch();
+}//close of main
